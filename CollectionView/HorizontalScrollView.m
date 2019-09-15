@@ -10,8 +10,8 @@
 #import "HorizontalViewCell.h"
 #import "DataType.h"
 
-#define demo_items_amount       25
-#define demo_items_bw           5
+#define demo_items_amount       7
+#define demo_items_bw           3
 
 #define default_cell_size       100.0f
 #define image_size              85.0f
@@ -85,17 +85,18 @@
     self.dataArray = [[NSMutableArray alloc] init];
     
     NSMutableArray * arr = [[NSMutableArray alloc] init];
-    [arr addObject:[UIImage imageNamed:@"1.jpg"]];
-    [arr addObject:[UIImage imageNamed:@"2.jpg"]];
-    [arr addObject:[UIImage imageNamed:@"3.jpeg"]];
-    [arr addObject:[UIImage imageNamed:@"8.jpg"]];
-    [arr addObject:[UIImage imageNamed:@"9.jpg"]];
-    [arr addObject:[UIImage imageNamed:@"10.jpeg"]];
-    [arr addObject:[UIImage imageNamed:@"11.jpg"]];
+    [arr addObject:[UIImage imageNamed:@"rose-beautiful-beauty-bloom.jpg"]];
+    [arr addObject:[UIImage imageNamed:@"pexels-photo-2892244.jpeg"]];
+    [arr addObject:[UIImage imageNamed:@"pexels-photo-1083822.jpeg"]];
+    [arr addObject:[UIImage imageNamed:@"dahlia-red-blossom-bloom-60597.jpeg"]];
+    [arr addObject:[UIImage imageNamed:@"marguerite-daisy-beautiful-beauty.jpg"]];
+    [arr addObject:[UIImage imageNamed:@"pexels-photo-1820567.jpeg"]];
+    [arr addObject:[UIImage imageNamed:@"rose-blue-flower-rose-blooms-67636.jpeg"]];
     
     for (int i=0; i<demo_items_amount; i++) {
         DataType * data = [[DataType alloc]init];
-        data.image = [arr objectAtIndex:(rand() % 7)];
+//        data.image = [arr objectAtIndex:(rand() % 7)];
+        data.image = [arr objectAtIndex:i];
         data.isGrayscaled = !(demo_items_amount - i > demo_items_bw);
         [self.dataArray addObject:data];
     }
